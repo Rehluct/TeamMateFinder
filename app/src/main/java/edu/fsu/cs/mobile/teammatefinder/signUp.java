@@ -2,6 +2,7 @@ package edu.fsu.cs.mobile.teammatefinder;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -162,6 +163,8 @@ public class signUp extends Fragment {
                             userI = FirebaseAuth.getInstance().getCurrentUser();
 
                             writeNewUser(mUsernameField .getText().toString(),mEmailField.getText().toString(),mPasswordField.getText().toString(),mAgeField.getText().toString(),rb.getText().toString());
+                            Intent intent = new Intent(getActivity(), StartApp.class);
+                            startActivity(intent);
                             Log.i("yes","hahas");
                         } else {
                             // If sign in fails, display a message to the user.
