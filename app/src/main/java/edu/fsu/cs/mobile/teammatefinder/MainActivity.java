@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements signUp.OnFragment
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
         Login fragment = new Login();
         fragmentTransaction.add(R.id.container, fragment);
         fragmentTransaction.commit();
