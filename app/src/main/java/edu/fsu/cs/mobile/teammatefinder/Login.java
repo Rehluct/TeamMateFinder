@@ -90,6 +90,7 @@ public class Login extends Fragment {
         }
         String email = mEmailField.getText().toString();
         String password = mPasswordField.getText().toString();
+        Log.i("start","llllllll");
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
@@ -98,6 +99,9 @@ public class Login extends Fragment {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
+                            Toast.makeText(getActivity(), "success yo",
+                                    Toast.LENGTH_SHORT).show();
+
                             Intent intent = new Intent(getActivity(), StartApp.class);
                             startActivity(intent);
                             FirebaseUser user = mAuth.getCurrentUser();
